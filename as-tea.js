@@ -5,9 +5,10 @@ module.exports= (function AsTea(template, arg__){
 	for(var i= 1; i < arguments.length; ++i){
 		var arg= arguments[i]
 		if(arg instanceof String) {
-			arguments[i]= parse(codegen(arg)) // uggg would that for reals?
+			// pass through the strings
 		}else if(arg.type){
-			// this is cool someone knows wtf, has ast, gj
+			// ugg ugly as $@#$@ spin out into code cause #$@#$@
+			arguments[i]= codegen(arg)
 		}else{
 			throw new Exception('unexpected arg')
 		}
